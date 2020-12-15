@@ -9,7 +9,7 @@ level = str(os.environ.get("flaskLogLevel", "INFO"))
 debug = str(os.environ.get("flaskDebug", "True"))
 
 commit_sha = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).decode("utf-8").strip()
-version    = subprocess.check_output(['git', 'describe', 'parent']).strip().decode("utf-8").strip()
+version    = subprocess.check_output(['git', 'describe', '--tags']).strip().decode("utf-8").strip()
 
 logger.basicConfig(level=level)
 
