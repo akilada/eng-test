@@ -69,13 +69,6 @@ The following are API enpoints avenabling one to:
 
 ```
 
-- Make sure minikube uses the local docker environment
-```bash
-
-    eval $(minikube docker-env)
-
-```
-
 - Enable metrics on minikube
 ```bash
 
