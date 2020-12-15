@@ -19,7 +19,7 @@ The purpose of the project is to build a simple python flask based API endpoint.
 
 ## Flask API Endpoints
 
-The following are API enpoints avenabling one to:
+The following are API enpoints enabling one to:
 
 * Request project details
 
@@ -86,7 +86,7 @@ The following are API enpoints avenabling one to:
 - Deploy FlaskAPI temaplte 
 ```bash
 
-    kuectl apply -f ./k8s-template.yml
+    kubectl apply -f ./k8s-template.yml
 
 ```
 
