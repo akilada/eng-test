@@ -16,7 +16,7 @@ spec:
   selector:
     app: flaskapi
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
@@ -26,6 +26,9 @@ metadata:
   namespace: flaskapi
 spec:
   replicas: 2
+  selector:
+    matchLabels:
+      app: flaskapi
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -39,7 +42,7 @@ spec:
     spec:
       containers:
       - name: flaskapi
-        image: akilada/flaskapi
+        image: akilada/flaskapi:1.0.3
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -68,7 +71,7 @@ metadata:
   namespace: flaskapi
 spec:
   scaleTargetRef:
-    apiVersion: extensions/v1beta1
+    apiVersion: apps/v1
     kind: Deployment
     name: flaskapi
   minReplicas: 2

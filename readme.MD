@@ -5,6 +5,11 @@
 
 The purpose of the project is to build a simple python flask based API endpoint.
 
+## Assumptions
+
+* Virtualbox installed on the developer's workstation
+* Virtualbox used as the vmdriver for minikube 
+
 ## pre-requisites
 
 - [![Minikube](https://img.shields.io/badge/Minikube-v1.15.1-brightgreen)](https://kubernetes.io/docs/setup/minikube/)
@@ -60,7 +65,7 @@ The following are API enpoints avenabling one to:
 - Start minikube
 ```bash
 
-    minikube start --memory=4096 --cpus=2 --kubernetes-version=v1.11.0
+    minikube start --memory=2048 --vm-driver=virtualbox --cpus=2 --kubernetes-version=v1.20.0
 
 ```
 
@@ -104,7 +109,7 @@ The following are API enpoints avenabling one to:
 - Run curl command to test
 ```bash
 
-    curl $MINIKUBE_HOST:30101
+    curl $MINIKUBE_HOST:30101/info
 
 ```
 
@@ -113,6 +118,6 @@ The following are API enpoints avenabling one to:
 - Run following command to test HPA
 ```bash
 
-    while true; do wget -q -O- curl $MINIKUBE_HOST:30101; done
+    while true; do wget -q -O- curl $MINIKUBE_HOST:30101/info; done
 
 ```
