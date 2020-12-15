@@ -47,7 +47,7 @@ The following are API enpoints avenabling one to:
         // The following commnds can be used to test the image locally
         docker run -it -d -p <outsidePort>:<dockerInsidePort> <imageName:version>
 
-        curl http://localhost:<outsidePort>
+        curl http://localhost:<outsidePort>/info
 ```
 
 ### Docker tag and push
